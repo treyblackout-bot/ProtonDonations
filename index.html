@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proton Donations</title>
+
+<!-- ===================== -->
+<!-- FAVICON / ICON CONFIG -->
+<!-- ===================== -->
+<link rel="icon" type="image/png" sizes="512x512" href="3165c085-b9be-40ff-aa3e-ac548daba8b6.png">
+<link rel="icon" type="image/png" sizes="32x32" href="3165c085-b9be-40ff-aa3e-ac548daba8b6.png">
+<link rel="icon" type="image/png" sizes="16x16" href="3165c085-b9be-40ff-aa3e-ac548daba8b6.png">
+<link rel="apple-touch-icon" sizes="180x180" href="3165c085-b9be-40ff-aa3e-ac548daba8b6.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#7b4dff">
+<meta name="msapplication-TileColor" content="#ff4fd8">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0c0c14;
+  color: #fff;
+}
+
+header {
+  padding: 25px;
+  text-align: center;
+  background: linear-gradient(90deg, #ff4fd8, #7b4dff);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  background: #12121c;
+  padding: 14px;
+  flex-wrap: wrap;
+}
+
+.tabs button {
+  background: #1c1c2b;
+  border: none;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.tabs button.active {
+  background: linear-gradient(135deg, #ff4fd8, #7b4dff);
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 30px 20px;
+}
+
+.tab { display: none; }
+.tab.active { display: block; }
+
+.card {
+  background: #161625;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #2a2a40;
+}
+
+.payment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 15px;
+}
+
+.payment {
+  background: linear-gradient(135deg, #ff4fd8, #7b4dff);
+  padding: 16px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.action {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #ff4fd8, #7b4dff);
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: #0f0f18;
+  border: 1px solid #333;
+  color: #fff;
+  border-radius: 6px;
+}
+
+.status-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #2a2a40;
+}
+
+.online { color: #2bff88; }
+.offline { color: #ff4f4f; }
+.maintenance { color: #ffc94f; }
+
+footer {
+  text-align: center;
+  opacity: 0.6;
+  padding: 25px;
+  font-size: 0.9rem;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Proton Donations</h1>
+  <p>Official Proton Purchase & Support Portal</p>
+</header>
+
+<div class="tabs">
+  <button class="active" onclick="openTab('purchase', this)">Purchase</button>
+  <button onclick="openTab('redeem', this)">Redeem</button>
+  <button onclick="openTab('status', this)">Server Status</button>
+  <button onclick="openTab('tos', this)">Terms</button>
+  <button onclick="openTab('login', this)">Login</button>
+</div>
+
+<div class="container">
+
+<div id="purchase" class="tab active">
+  <div class="card">
+    <h2>Accepted Payment Methods</h2>
+    <div class="payment-grid">
+      <div class="payment">PayPal<br>Friends & Family ONLY</div>
+      <div class="payment">Cash App</div>
+    </div>
+    <p style="color:#ff9b9b;font-weight:bold;">
+      Goods & Services payments will NOT be accepted.
+    </p>
+  </div>
+</div>
+
+<div id="redeem" class="tab">
+  <div class="card">
+    <h2>Redeem Code</h2>
+    <input type="text" placeholder="PROTON-XXXX-XXXX">
+    <button class="action">Redeem Code</button>
+  </div>
+</div>
+
+<div id="status" class="tab">
+  <div class="card">
+    <h2>Server Status</h2>
+    <div class="status-row"><span>Authentication</span><span class="online">ONLINE</span></div>
+    <div class="status-row"><span>Game Servers</span><span class="online">ONLINE</span></div>
+    <div class="status-row"><span>Backend</span><span class="maintenance">MAINTENANCE</span></div>
+  </div>
+</div>
+
+<div id="login" class="tab">
+  <div class="card">
+    <h2>Discord Verification</h2>
+    <a class="action"
+       href="https://discord.com/oauth2/authorize?client_id=YOUR_DISCORD_CLIENT_ID&response_type=code&scope=identify">
+       Login with Discord
+    </a>
+  </div>
+</div>
+
+<div id="tos" class="tab">
+  <div class="card">
+    <h2>Terms of Service</h2>
+    <ul>
+      <li>All donations are final and non-refundable.</li>
+      <li>Only PayPal Friends & Family and Cash App are accepted.</li>
+      <li>Only USD and EUR currencies are supported.</li>
+      <li>Chargebacks result in permanent bans.</li>
+      <li>Rewards are digital and non-transferable.</li>
+    </ul>
+  </div>
+</div>
+
+</div>
+
+<footer>
+  © 2025 Proton • All rights reserved
+</footer>
+
+<script>
+function openTab(id, btn) {
+  document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+  document.querySelectorAll(".tabs button").forEach(b => b.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+  btn.classList.add("active");
+}
+</script>
+
+</body>
+</html>
